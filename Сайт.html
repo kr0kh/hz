@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Сайт.css">
+    <link rel="icon" href="Фото/Иконка.png">
+    <title>Библиотека</title>
+</head>
+<body>
+ <div class="container">
+   <form action="#" class="bilet" name="submit-to-google-sheet">
+   <h2>Регистрация билета</h2>
+   <input type="text" name="FIO" id="FIO" autocomplete="off" 
+    placeholder="Введите своё ФИО" required>
+   <input type="number" name="number" id="number" autocomplete="off" 
+    placeholder="Введите свой номер читательского билета" required>
+   <h3>Введите дату выдачи билета</h3>
+   <input type="date" name="date" id="date" autocomplete="off" 
+   required>
+   <h3>Введите дату последней перерегистрации</h3>
+   <input type="date" name="date1" id="date1" autocomplete="off" 
+   required>
+   <h3>Введите автора и название взятой книги</h3>
+   <input type="text" name="avtor i kniga" id="avtor i kniga" autocomplete="off">
+   <h3>Введите дату взятия книги</h3>
+   <input type="date" name="date2" id="date2" autocomplete="off" 
+   required>
+   <button type="submit"></button>
+    <span id="sendText"></span>
+    </form>
+ </div>
+ <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyKx-n5i5Z9elKcMtorfatNKUkBJsDcWHmDhR-8aXjJx-0PZ8F8XwK7l-HVvHwRV_5Ugw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const sendText=document.getElementById('sendText')
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{
+            sendText.innerHTML = "Спасибо, ваш ответ отправлен!"
+            setTimeout(function(){
+                sendText.innerHTML=""
+            }, 3000)
+            form.reset()
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+ </script>
+
+
+<h1>Каталог книг</h1>
+<a href="https://docs.google.com/spreadsheets/d/10WmcMR8_VmLoPEIEsN08ctW7IJ0o4HQx_wLDdYRRZ6Q/edit?gid=0#gid=0">Ссылка на расширенный каталог книг</a>
+<div class="main" id="блок1">
+    <h2 style="font-size: 30px;">Зарубежная классика</h2>
+    <p></p>
+    <a href="#блок2">Нажми сюда, чтобы посмотреть жанр "русская классика"</a><br>
+    <h3>Ремарк Э.М. "Станция на горизонте"</h3>
+    <h3>Год и место издания: 1998, Германия</h3>
+    <h3>Издательство: Лялля</h3><br>
+    <h3>Хемингуэй Э. "Старик и море"</h3>
+    <h3>Год и место издания: 1955, Германия</h3>
+    <h3>Издательство: Лялля</h3><br>
+    <h3>Хеллер Д. "Поправка-22"</h3>
+    <h3>Год и место издания: 1944, Германия</h3>
+    <h3>Издательство: Лялля</h3><br>
+  </div>
+   
+  <div class="main" id="блок2">
+    <h2 style="font-size: 30px;">Русская классика</h2>
+    <a href="#блок1">Нажми сюда, чтобы посмотреть жанр "зарубежная классика".</a><br>
+    <h3>Толстой Л.Н "Война и мир"</h3>
+    <h3>Год и место издания: 1958, CCCP</h3>
+    <h3>Издательство: Лялля</h3><br>
+    <h3>Достоевский Ф.М. "Преступление и наказание"</h3>
+    <h3>Год и место издания: 1944, CCCP</h3>
+    <h3>Издательство: Лялля</h3><br>
+    <h3>Булгаков М.А. "Мастер и маргарита"</h3>
+    <h3>Год и место издания: 1922, CCCP</h3>
+    <h3>Издательство: Лялля</h3><br>
+</div>
+
+<div class="wrapper">
+    <footer class="footer">Конец библиотеки</footer>
+</div>
+</body>
+
+</html>
