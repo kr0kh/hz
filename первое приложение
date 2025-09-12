@@ -65,10 +65,32 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',),
              Text(
               'Я же говорю, не кликай!!'),
-             Row(children: [Text("           yoooo                             ooooy")]),
-             Row(children: [Text("           y1ooo                             ooo1y")]),
-             Row(children: [Text("           y11ooo                            ooo11y")]),
-             Row(children: [Text("           y111o                             o111y")]),
+             Row(children: [Text("   yoooo       ooooy",
+             style:
+             TextStyle( fontSize: 20,
+              fontWeight: FontWeight.bold,
+               color: Colors.blue,
+                letterSpacing: 2.0,
+                 wordSpacing: 5.0),)]),
+             Row(children: [Text("    y1ooo           ooo1y",
+             style:
+             TextStyle( fontSize: 15,
+              fontWeight: FontWeight.w100,
+               color: Color.fromARGB(255, 33, 243, 44),
+                letterSpacing: 2.0,
+                 wordSpacing: 5.0),)]),
+             Row(children: [Text("   y11ooo     ooo11y",style:
+             TextStyle( fontSize: 20,
+              fontWeight: FontWeight.bold,
+               color: Colors.blue,
+                letterSpacing: 2.0,
+                 wordSpacing: 5.0),)]),
+             Row(children: [Text("    y111o           o111y",style:
+             TextStyle( fontSize: 15,
+              fontWeight: FontWeight.w100,
+               color: Color.fromARGB(255, 33, 243, 44),
+                letterSpacing: 2.0,
+                 wordSpacing: 5.0),)]),
              Container(
       color: Color.fromARGB(255, 0, 0, 0),
       alignment: Alignment.center,
