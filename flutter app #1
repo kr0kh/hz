@@ -17,12 +17,19 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.red,
         ),
         body: Center(
-          child: Text("Hello!", style: TextStyle(
-          color: Colors.red,
-          fontSize: 24,
-          fontFamily: "Arial"
-        ),
-        ),
+          child: Container(
+            color: Colors.red,
+            child: Text('Hello World'),
+            margin: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(30.0),
+          ),
+          //Image(image: AssetImage('assets/....jpeg')),
+          //Image(
+            //image: NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.verywellhealth.com%2Ftypes-of-penis-5188478&psig=AOvVaw3ceuI9yPIn15OpokTiQ-tp&ust=1758818054497000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDkpP_p8Y8DFQAAAAAdAAAAABAE')
+          //)
+          //ElevatedButton(onPressed: () {}, child: Text("Click Me")),
+          // FloatingActionButton(onPressed: () {}, child: Text("Click")),
+          //Icon(Icons.backspace_outlined),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,
